@@ -14,5 +14,6 @@ namespace ETS.Models.Models
         public string description { get; set; }
         public DateTime start_date { get; set; }
         public DateTime end_date { get; set; }
+        public string user_id { get; set; }
     }
 }

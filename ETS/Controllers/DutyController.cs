@@ -56,7 +56,8 @@ namespace ETS.Controllers
         [Route("~/Duty/GetList")]
         public async Task<IActionResult> List()
         {
-            IEnumerable<Duty> list = await _unitOfWork.Duty.GetAllAsync();
+            string user = GetUserId();
+            IEnumerable<Duty> list = await _unitOfWork.Duty.GetAllAsync(u=>u.user_id == user);
             return Json(new { success = true, message = list });
         }
 
@@ -78,7 +79,9 @@ namespace ETS.Controllers
 
                     if (duty.id == 0)
                     {
-                    
+
+                        string user = GetUserId();
+                        duty.user_id = user;
                         await _unitOfWork.Duty.AddAsync(duty);
 
                     }

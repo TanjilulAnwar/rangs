@@ -512,3 +512,5 @@ D:\rangs\server\ETS\obj\Debug\net5.0\ETS.pdb
 D:\rangs\server\ETS\obj\Debug\net5.0\ETS.genruntimeconfig.cache
 D:\rangs\server\ETS\bin\Debug\net5.0\MySqlConnector.dll
 D:\rangs\server\ETS\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
+K:\Rangs\server\ETS\bin\Debug\net5.0\MySqlConnector.dll
+K:\Rangs\server\ETS\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll

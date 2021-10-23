@@ -46,13 +46,13 @@ namespace ETS.Controllers
                 }
 
 
-                //if (registration.phone_number.Contains("[a-zA-Z]+") || registration.phone_number.Length < 11)
-                //{
-                //    throw new Exception("Phone No. Invalid!");
-                //}
+                if (registration.phone_number.Contains("[a-zA-Z]+") || registration.phone_number.Length < 11)
+                {
+                    throw new Exception("Phone No. Invalid!");
+                }
 
 
-            
+
                 var userExist = await userManager.FindByEmailAsync(registration.email);
                 if (userExist != null)
                 {
