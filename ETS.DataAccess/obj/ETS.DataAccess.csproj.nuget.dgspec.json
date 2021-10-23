@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "K:\\Rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj": {}
+    "D:\\rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj": {}
   },
   "projects": {
-    "K:\\Rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj": {
+    "D:\\rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\Rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj",
+        "projectUniqueName": "D:\\rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj",
         "projectName": "ETS.DataAccess",
-        "projectPath": "K:\\Rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\tanji\\.nuget\\packages\\",
-        "outputPath": "K:\\Rangs\\server\\ETS.DataAccess\\obj\\",
+        "projectPath": "D:\\rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\NICE\\.nuget\\packages\\",
+        "outputPath": "D:\\rangs\\server\\ETS.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tanji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NICE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj": {
-                "projectPath": "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj"
+              "D:\\rangs\\server\\ETS.Models\\ETS.Models.csproj": {
+                "projectPath": "D:\\rangs\\server\\ETS.Models\\ETS.Models.csproj"
               }
             }
           }
@@ -69,6 +69,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.9, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             }
           },
           "imports": [
@@ -86,21 +90,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj": {
+    "D:\\rangs\\server\\ETS.Models\\ETS.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj",
+        "projectUniqueName": "D:\\rangs\\server\\ETS.Models\\ETS.Models.csproj",
         "projectName": "ETS.Models",
-        "projectPath": "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj",
-        "packagesPath": "C:\\Users\\tanji\\.nuget\\packages\\",
-        "outputPath": "K:\\Rangs\\server\\ETS.Models\\obj\\",
+        "projectPath": "D:\\rangs\\server\\ETS.Models\\ETS.Models.csproj",
+        "packagesPath": "C:\\Users\\NICE\\.nuget\\packages\\",
+        "outputPath": "D:\\rangs\\server\\ETS.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tanji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NICE\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -150,7 +154,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

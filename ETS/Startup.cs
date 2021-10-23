@@ -44,18 +44,24 @@ namespace ETS
             });
            
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                 SD.DATABASE
-            ));
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //    options.UseSqlServer(
+            //     SD.DATABASE
+            //));
 
-          services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySql(
+                 SD.DATABASE,
+                   new MySqlServerVersion(new Version(8, 0, 23))
+            ));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowOrigin",   
                 builder => builder.WithOrigins(
-                    "http://192.168.0.100:3002",
-                    "http://localhost:3002",
+                    "http://192.168.0.100:3000",
+                    "http://localhost:3000",
                     "http://116.193.218.147:3002",
                     "http://192.168.0.100:5000", 
                     "http://localhost:5000")

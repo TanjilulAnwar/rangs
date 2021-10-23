@@ -1727,19 +1727,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tanji\\.nuget\\packages\\": {}
+    "C:\\Users\\NICE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj",
+      "projectUniqueName": "D:\\rangs\\server\\ETS.Models\\ETS.Models.csproj",
       "projectName": "ETS.Models",
-      "projectPath": "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj",
-      "packagesPath": "C:\\Users\\tanji\\.nuget\\packages\\",
-      "outputPath": "K:\\Rangs\\server\\ETS.Models\\obj\\",
+      "projectPath": "D:\\rangs\\server\\ETS.Models\\ETS.Models.csproj",
+      "packagesPath": "C:\\Users\\NICE\\.nuget\\packages\\",
+      "outputPath": "D:\\rangs\\server\\ETS.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tanji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NICE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1789,7 +1789,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

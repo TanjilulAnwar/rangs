@@ -21,6 +21,13 @@ namespace ETS.Controllers
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+        public static string RandomStuff(int length)
+        {
+            const string chars = "123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
         public static string RandomString(int length)
         {
               const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

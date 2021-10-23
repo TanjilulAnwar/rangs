@@ -22,3 +22,15 @@ K:\Rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.csproj.CoreCompileInputs.
 K:\Rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.dll
 K:\Rangs\server\ETS.Models\obj\Debug\net5.0\ref\ETS.Models.dll
 K:\Rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.pdb
+D:\rangs\server\ETS.Models\bin\Debug\net5.0\ETS.Models.deps.json
+D:\rangs\server\ETS.Models\bin\Debug\net5.0\ETS.Models.dll
+D:\rangs\server\ETS.Models\bin\Debug\net5.0\ref\ETS.Models.dll
+D:\rangs\server\ETS.Models\bin\Debug\net5.0\ETS.Models.pdb
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.csproj.AssemblyReference.cache
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.AssemblyInfoInputs.cache
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.AssemblyInfo.cs
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.csproj.CoreCompileInputs.cache
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.dll
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ref\ETS.Models.dll
+D:\rangs\server\ETS.Models\obj\Debug\net5.0\ETS.Models.pdb

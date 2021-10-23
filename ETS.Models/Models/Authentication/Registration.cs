@@ -16,6 +16,7 @@ namespace ETS.Models.Models.Authentication
         public string phone_number { get; set; }
         public string address { get; set; }
         public string user_id { get; set; }
+        public string verification { get; set; }
 
         [NotMapped]
         public string password { get; set; }

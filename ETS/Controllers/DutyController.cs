@@ -18,8 +18,31 @@ namespace ETS.Controllers
 
         }
 
+        public class Person
+        {
+            public string first_name { get; set; }
+            public string last_name { get; set; }
+            public string user_id { get; set; }
+        }
+
+        [HttpGet]
+        [Route("~/Prop/User")]
+        public IActionResult PropList()
+        {
+            List<Person> people = new List<Person>();
+
+            people.Add(new Person { first_name = "Julekha", last_name = "Begum", user_id = "010002" });
+            people.Add(new Person { first_name = "Sabuj",   last_name = "Molla", user_id = "010003" });
+            people.Add(new Person { first_name = "Ikbal",   last_name = "Nayem", user_id = "010004" });
+            people.Add(new Person { first_name = "Habib", last_name =   "Imrul",   user_id = "010005" });
+
+            return Json(new { success = true, message = people });
+        }
 
 
+
+
+        [HttpGet]
         [Route("~/Duty/paging")]
         public async Task<IActionResult> Paging(int page_no, int page_size)
         {
@@ -49,9 +72,13 @@ namespace ETS.Controllers
 
                 if (ModelState.IsValid)
                 {
+
+                    if (duty.assign_to == null) throw new Exception("Assign to cannot be empty");
+                    if (duty.task_name == null) throw new Exception("task name cannot be empty");
+
                     if (duty.id == 0)
                     {
-
+                    
                         await _unitOfWork.Duty.AddAsync(duty);
 
                     }
@@ -61,7 +88,8 @@ namespace ETS.Controllers
 
                     }
                     await _unitOfWork.SaveAsync();
-                    return Json(new { success = true, message = "Data has been inserted Successfully!" });
+
+                    return Json(new { success = true, message = duty });
 
                 }
                 else
@@ -81,7 +109,7 @@ namespace ETS.Controllers
 
 
         [HttpDelete]
-        [Route("~/Duty/delete/{id}")]
+        [Route("~/Duty/delete")]
         public async Task<IActionResult> Delete(int id)
         {
             Duty duty = await _unitOfWork.Duty.GetFirstOrDefaultAsync(u => u.id == id);

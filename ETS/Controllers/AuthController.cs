@@ -1,6 +1,5 @@
 ﻿using ETS.DataAccess.Repository.IRepository;
 using ETS.Models.Models.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +7,8 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,10 +46,10 @@ namespace ETS.Controllers
                 }
 
 
-                if (registration.phone_number.Contains("[a-zA-Z]+") || registration.phone_number.Length < 11)
-                {
-                    throw new Exception("Phone No. Invalid!");
-                }
+                //if (registration.phone_number.Contains("[a-zA-Z]+") || registration.phone_number.Length < 11)
+                //{
+                //    throw new Exception("Phone No. Invalid!");
+                //}
 
 
             
@@ -157,7 +158,7 @@ namespace ETS.Controllers
                         success = true,
                         token = new JwtSecurityTokenHandler().WriteToken(token)
 
-                    }); ;
+                    }); 
                 }
                 return Json(new { success = false, message = "Invalid email or password !" });
             }
@@ -177,14 +178,27 @@ namespace ETS.Controllers
             
             try
             {
-                
+               
                 var userID = GetUserId();
                 if (userID == null)
                 {
-                    return Json(new { success = true, message = "No data found !" });
+                    return Json(new { success = false, message = "No data found !" });
                 }
+                var AspUser = await userManager.FindByIdAsync(userID);
                 Registration registration = await _unitOfWork.Registration.GetFirstOrDefaultAsync(u => u.user_id == userID);
-                return Json(new { success = true, message = registration });
+                var user = new
+                {
+                    first_name = registration.first_name,
+                    last_name = registration.last_name,
+                    email = registration.email,
+                    phone_number = registration.phone_number,
+                    address = registration.address,
+                    user_id = registration.user_id,
+                    email_confirmed = AspUser.EmailConfirmed
+
+                };
+              
+                return Json(new { success = true, message = user });
 
             }
             catch
@@ -198,11 +212,97 @@ namespace ETS.Controllers
 
 
 
+        [HttpGet]
+        [Route("~/Send/VerificationEmail")]
+        public async Task<IActionResult> GetByEmail(string user_id)
+        {
+
+            try
+            {
+                var userID = user_id;
+                if (userID == null)
+                {
+                    return Json(new { success = false, message = "No data found !" });
+                }
+                var AspUser = await userManager.FindByIdAsync(userID);
+                Registration registration = await _unitOfWork.Registration.GetFirstOrDefaultAsync(u => u.user_id == userID);
+
+                using SmtpClient email = new SmtpClient
+                {
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    EnableSsl = true,
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    Credentials = new NetworkCredential("ibumken@gmail.com", "7thtreaty")
+
+                };
+
+                string Vtoken = RandomStuff(50);
+                registration.verification = Vtoken;
+                _unitOfWork.Registration.Update(registration);
+                await  _unitOfWork.SaveAsync();
+
+                string link = "http://localhost:23493/verifyEmail?user="+ AspUser.Id+ "&Vtoken=" + Vtoken;
+                string subject = "Verify Email";
+                string body = @"<html><body>  Please Verify your email by clicking this 
+                                <a href=""\" + link + "\"> link</a></body></html>";
+
+                email.Send("ibumken@gmail.com", registration.email, subject, body);
+
+                return Json(new { success = true, message = "email has been sent!" });
+
+                //return new ContentResult
+                //{
+                //    ContentType = "text/html",
+                //    StatusCode = (int)HttpStatusCode.OK,
+                //    Content = "<html><body>Welcome</body></html>"
+                //};
+
+            }
+            catch(Exception e)
+            {
+                return Json(new { success = false, message = e.Message });
+            }
+
+        }
 
 
 
+        [HttpGet]
+        [Route("~/verifyEmail")]
+        public async Task<IActionResult> verifyEmail(string Vtoken , string user)
+        {
+
+            try
+            {
+               
+                Registration registration = await _unitOfWork.Registration.GetFirstOrDefaultAsync(u => u.user_id == user && u.verification == Vtoken);
+                if(registration == null)
+                {
+                    return Json(new { success = false, message = "The link has expired!" });
+                }
+
+                registration.verification = null;
+                _unitOfWork.Registration.Update(registration);
+                await _unitOfWork.SaveAsync();
 
 
+                var AspUser = await userManager.FindByIdAsync(user);
+               AspUser.EmailConfirmed = true;
+               await userManager.UpdateAsync(AspUser);
+
+
+
+                return Json(new { success = true, message = "email verified!" });
+
+            }
+            catch
+            {
+                return Json(new { success = false, message = "Failed!" });
+            }
+
+        }
 
 
 
