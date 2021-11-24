@@ -6577,19 +6577,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tanji\\.nuget\\packages\\": {}
+    "C:\\Users\\NICE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "K:\\Rangs\\server\\ETS\\ETS.csproj",
+      "projectUniqueName": "D:\\rangs\\rangs\\ETS\\ETS.csproj",
       "projectName": "ETS",
-      "projectPath": "K:\\Rangs\\server\\ETS\\ETS.csproj",
-      "packagesPath": "C:\\Users\\tanji\\.nuget\\packages\\",
-      "outputPath": "K:\\Rangs\\server\\ETS\\obj\\",
+      "projectPath": "D:\\rangs\\rangs\\ETS\\ETS.csproj",
+      "packagesPath": "C:\\Users\\NICE\\.nuget\\packages\\",
+      "outputPath": "D:\\rangs\\rangs\\ETS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tanji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NICE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6603,11 +6603,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "K:\\Rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj": {
-              "projectPath": "K:\\Rangs\\server\\ETS.DataAccess\\ETS.DataAccess.csproj"
+            "D:\\rangs\\rangs\\ETS.DataAccess\\ETS.DataAccess.csproj": {
+              "projectPath": "D:\\rangs\\rangs\\ETS.DataAccess\\ETS.DataAccess.csproj"
             },
-            "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj": {
-              "projectPath": "K:\\Rangs\\server\\ETS.Models\\ETS.Models.csproj"
+            "D:\\rangs\\rangs\\ETS.Models\\ETS.Models.csproj": {
+              "projectPath": "D:\\rangs\\rangs\\ETS.Models\\ETS.Models.csproj"
             }
           }
         }
@@ -6675,7 +6675,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

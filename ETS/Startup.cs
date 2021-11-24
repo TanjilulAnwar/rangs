@@ -44,17 +44,20 @@ namespace ETS
             });
            
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                 SD.DATABASE
-            ));
+
 
 
             //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseMySql(
-            //     SD.DATABASE,
-            //       new MySqlServerVersion(new Version(8, 0, 23))
+            //    options.UseSqlServer(
+            //     SD.DATABASE
             //));
+
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseMySql(
+                 SD.DATABASE,
+                   new MySqlServerVersion(new Version(8, 0, 23))
+            ));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddCors(options =>
             {

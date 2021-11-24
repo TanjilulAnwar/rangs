@@ -219,6 +219,8 @@ namespace ETS.Controllers
 
             try
             {
+
+               
                 var userID = user_id;
                 if (userID == null)
                 {
@@ -234,7 +236,7 @@ namespace ETS.Controllers
                     EnableSsl = true,
                     Host = "smtp.gmail.com",
                     Port = 587,
-                    Credentials = new NetworkCredential("ibumken@gmail.com", "7thtreaty")
+                    Credentials = new NetworkCredential("ibumken@gmail.com", "password")
 
                 };
 
